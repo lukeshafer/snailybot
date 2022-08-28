@@ -3,9 +3,9 @@ import ready from './ready';
 import messageCreate from './message-create';
 
 type Event = {
-  name: string;
-  once?: boolean;
-  execute(...args: unknown[]): Promise<void> | void;
+	name: string;
+	once?: boolean;
+	execute(...args: unknown[]): Promise<void> | void;
 };
 
 export default [ready, interactionCreate, messageCreate] as Event[];
