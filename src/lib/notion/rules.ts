@@ -1,11 +1,10 @@
 import { Client, isFullBlock } from '@notionhq/client';
 import { extractRichText } from '../functions/extractRichText';
 
-const notion = new Client({ auth: process.env.NOTION_KEY });
 
 const blockId = process.env.NOTION_RULES_ID;
 
-export const getRules = async () => {
+export const getRules = async (notion: Client) => {
 	const response = await notion.blocks.children.list({
 		block_id: blockId,
 		page_size: 50,

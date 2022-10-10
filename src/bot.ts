@@ -1,6 +1,9 @@
 import { Client, Intents } from 'discord.js';
+import { Notion } from './lib/notion/client';
 import events from './events/_events';
 import 'dotenv/config';
+
+const notion = new Notion();
 
 const token = process.env.DISCORD_TOKEN;
 
